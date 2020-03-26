@@ -1,0 +1,479 @@
+/* Général */
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: brown;
+  overflow: hidden;
+  z-index: -10;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -10;
+}
+
+h1 {
+	position: absolute;
+	left: 50%;
+	top: 10px;
+	transform: translateX(-50%);
+	opacity: 0%;
+	font-size: 64px;
+	margin: 0px;
+	padding: 0px;
+	font-family:Impact;
+	transition-delay: 7s;
+	transition-duration : 3s;
+	transition-timing-function : ease-in;
+	z-index: 10;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+	-webkit-text-stroke: 3px black;
+}
+
+a:hover {
+  -webkit-filter: sepia(100%) !important;
+}
+
+a:focus {
+  -webkit-filter: sepia(100%) !important;
+}
+
+a:active {
+  -webkit-filter: sepia(100%) !important;
+}
+
+h1::before {
+  content: '';
+  display: inline-block;
+  background-image: url('../html/images/curseur_trololol.gif');
+  background-size: cover;
+  width: 1em;
+  height: 1em;
+}
+
+h1::after {
+  content: '';
+  display: inline-block;
+  background-image: url('../html/images/curseur_trololol.gif');
+  background-size: cover;
+  width: 1em;
+  height: 1em;
+}
+
+.player {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 600px;
+  border: 10px solid white;
+  opacity: 0%;
+  transition-duration : 6s;
+  transition-timing-function : ease-in;
+  z-index: 1;transform: translateX(-50%);
+}
+
+.video {
+  width: 100%;
+  opacity: 0%;
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 81px;
+  transform: translate(-50%, -50%);
+  outline: none;
+  z-index: 10;
+}
+
+.btn:hover {
+  -webkit-filter: sepia(100%);
+}
+
+.trolls {
+  position: absolute;
+  width: 100px;
+  height: 81px;
+  outline: none;
+  left: 0px;
+  opacity: 0%;
+  animation-play-state: paused;
+}
+
+.trolls:hover {
+  -webkit-filter: sepia(100%) !important;
+}
+
+.trolls:focus {
+  -webkit-filter: sepia(100%) !important;
+}
+
+.trolls:active {
+  -webkit-filter: s(100%) !important;
+}
+
+.play {
+  top : -100px;
+  left: -100px;
+  animation-name: move-play;
+  animation-duration: 18s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 9s;
+}
+
+.pause {
+  top : -100px;
+  left: -100px;
+  animation-name: move-pause;
+  animation-duration: 18s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 7s;
+}
+
+.volm {
+  top : -100px;
+  left: -100px;
+  animation-name: move-volm;
+  animation-duration: 13s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 7.5s;
+  
+}
+
+.volp {
+  top : -100px;
+  left: -100px;
+  animation-name: move-volp;
+  animation-duration: 13s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 7.5s;
+}
+
+.stop {
+  top : -100px;
+  left: -100px;
+  animation-name: move-stop;
+  animation-duration: 18s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 8s;
+}
+
+.seekbar
+{  
+  cursor: pointer;
+  height: 10px;
+  margin-bottom: 10px;
+  outline: 2px solid black;
+  overflow: hidden;
+  position: absolute;
+  bottom: 10px;
+  width: 400px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0%;
+  transition-delay: 7s;
+  transition-duration : 3s;
+  transition-timing-function : ease-in;
+}
+
+.seekbar span
+{
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10px;
+  width: 0px;
+}
+
+
+
+
+
+/* Animations */
+
+@keyframes move-play{
+    0%{
+        top: 65%;
+        left: 0%;
+        z-index: 0;
+        transform: translate(-100%, 0%)  rotate(0deg);
+    }
+
+    33.9999%{
+        top: 0%;
+        left: 50%;
+        z-index: 0;
+        transform: translate(0%, -100%)  rotate(360deg);
+    }
+
+    34%{
+        top: 92%;
+        left: 100%;
+        z-index: 0;
+        transform: translate(100%, 0%)  rotate(360deg);
+    }
+
+    66.9999%{
+        top: 0%;
+        left: 25%;        
+        z-index: 0;
+        transform: translate(0%, -100%)  rotate(720deg);
+    }
+	
+	67%{
+        top: 17%;
+        left: 100%;
+        z-index: 0;
+        transform: translate(100%, 0%)  rotate(720deg);
+    }
+
+    100%{
+        top: 100%;
+        left: 59%;        
+        z-index: 0;
+        transform: translate(0%, 100%)  rotate(1080deg);
+    }
+}
+
+@keyframes move-pause{
+    0%{
+        top: 0%;
+        left: 31%;
+        z-index: 0;
+        transform: translate(0%, -100%)  rotate(0deg);
+    }
+
+    33.9999%{
+        top: 39%;
+        left: 100%;
+        z-index: 0;
+        transform: translate(100%, 0%)  rotate(360deg);
+    }
+
+    34%{
+        top: 23%;
+        left: 0%;
+        z-index: 0;
+        transform: translate(-100%, 0%)  rotate(360deg);
+    }
+
+    66.9999%{
+        top: 100%;
+        left: 80%;        
+        z-index: 0;
+        transform: translate(0%, 100%)  rotate(720deg);
+    }
+	
+	67%{
+        top: 80%;
+        left: 0%;
+        z-index: 0;
+        transform: translate(-100%, 0%)  rotate(720deg);
+    }
+
+    100%{
+        top: 20%;
+        left: 100%;        
+        z-index: 0;
+        transform: translate(100%, 0%)  rotate(1080deg);
+    }
+}
+
+@keyframes move-volm{
+    0%{
+        top: 50%;
+        left: 40%;
+        z-index: 0;
+        transform: translate(-50%, -50%)  rotate(270deg);
+    }
+	
+	17%{
+        top: 50%;
+        left: 37%;
+        z-index: 0;
+        transform: translate(-100%, -50%)  rotate(270deg);
+    }
+
+    33.9999%{
+        top: 50%;
+        left: 40%;
+        z-index: 0;
+        transform: translate(-50%, -50%)  rotate(270deg);
+    }
+
+    34%{
+        top: 65%;
+        left: 50%;
+        z-index: 0;
+        transform: translate(-50%, -50%)  rotate(180deg);
+    }
+	
+	51%{
+        top: 71%;
+        left: 50%;
+        z-index: 0;
+        transform: translate(-50%, 0%)  rotate(180deg);
+    }
+
+    66.9999%{
+        top: 65%;
+        left: 50%;
+        z-index: 0;
+        transform: translate(-50%, -50%)  rotate(180deg);
+    }
+	
+	67%{
+        top: 50%;
+        left: 60%;
+        z-index: 0;
+        transform: translate(-50%, -50%)  rotate(90deg);
+    }
+	
+	82%{
+        top: 50%;
+        left: 63%;
+        z-index: 0;
+        transform: translate(0%, -50%)  rotate(90deg);
+    }
+
+    100%{
+        top: 50%;
+        left: 60%;
+        z-index: 0;
+        transform: translate(-50%, -50%)  rotate(90deg);
+    }
+}
+
+@keyframes move-volp{
+    0%{
+        top: 50%;
+        left: 60%;
+        z-index: 0;
+        transform: translate(-50%, -50%)  rotate(90deg);
+    }
+	
+	17%{
+        top: 50%;
+        left: 63%;
+        z-index: 0;
+        transform: translate(0%, -50%)  rotate(90deg);
+    }
+
+    33.9999%{
+        top: 50%;
+        left: 60%;
+        z-index: 0;
+        transform: translate(-50%, -50%)  rotate(90deg);
+    }
+
+    /* 34%{
+        top: 50%;
+        left: 40%;
+        z-index: 0;
+        transform: translate(-50%, -50%)  rotate(270deg);
+    } */
+	34%{
+        top: 35%;
+        left: 50%;
+        z-index: 0;
+        transform: translate(-50%, -50%)  rotate(0deg);
+	}
+	
+	51%{
+        top: 20%;
+        left: 50%;
+        z-index: 0;
+        transform: translate(-50%, 0%)  rotate(0deg);
+    }
+
+    66.9999%{
+        top: 35%;
+        left: 50%;
+        z-index: 0;
+        transform: translate(-50%, -50%)  rotate(0deg);
+    }
+	
+	67%{
+        top: 65%;
+        left: 50%;
+        z-index: 0;
+        transform: translate(-50%, -50%)  rotate(180deg);
+    }
+	
+	82%{
+        top: 71%;
+        left: 50%;
+        z-index: 0;
+        transform: translate(-50%, 0%)  rotate(180deg);
+    }
+
+    100%{
+        top: 65%;
+        left: 50%;
+        z-index: 0;
+        transform: translate(-50%, -50%)  rotate(180deg);
+    }
+}
+
+@keyframes move-stop{
+    0%{
+        top: 50%;
+        left: 100%;
+        z-index: 0;
+        transform: translate(100%, 0%)  rotate(0deg);
+    }
+
+    33.9999%{
+        top: 100%;
+        left: 43%;
+        z-index: 0;
+        transform: translate(0%, 100%)  rotate(360deg);
+    }
+
+    34%{
+        top: 0%;
+        left: 60%;
+        z-index: 0;
+        transform: translate(0%, -100%)  rotate(360deg);
+    }
+
+    66.9999%{
+        top: 100%;
+        left: 40%;        
+        z-index: 0;
+        transform: translate(0%, 100%)  rotate(720deg);
+    }
+	
+	67%{
+        top: 100%;
+        left: 90%;
+        z-index: 0;
+        transform: translate(0%, 100%)  rotate(720deg);
+    }
+
+    100%{
+        top: 0%;
+        left: 13%;        
+        z-index: 0;
+        transform: translate(0%, -100%)  rotate(1080deg);
+    }
+}
